@@ -20,9 +20,9 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/myartikel">
             <i class="fas fa-fw fa-newspaper"></i>
-            <span>Artikel Anda</span>
+            <span>Daftar Artikel</span>
         </a>
     </li>
 
