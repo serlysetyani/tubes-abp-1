@@ -28,3 +28,12 @@ Route::get('/myartikel', function () {
 Route::get('/profil', function () {
     return view('admin/profil');
 });
+
+// Auth Kontributor
+Route::get('/login', function () {
+    return view('auth/login');
+});
+
+Route::get('/register', function () {
+    return view('auth/register');
+});
