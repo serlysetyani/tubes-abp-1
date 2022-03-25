@@ -19,7 +19,7 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/profil">
             <i class="fas fa-fw fa-user"></i>
             <span>Profil</span>
         </a>
