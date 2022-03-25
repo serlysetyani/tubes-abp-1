@@ -24,3 +24,7 @@ Route::get('/dashboard', function () {
 Route::get('/myartikel', function () {
     return view('admin/artikelAnda');
 });
+
+Route::get('/profil', function () {
+    return view('admin/profil');
+});

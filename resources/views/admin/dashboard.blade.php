@@ -28,10 +28,10 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
-                                </div>
+                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                                <a href="#" class="d-none d-sm-inline-block btn btn btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Buat
+                                    Artikel</a>
                             </div>
                             <!-- Content ada di bawah sini -->
                             <div class="row">
@@ -71,19 +71,33 @@
                                 </div>
                                 <div class="col-xl-12 col-lg-7">
                                     <div class="card shadow mb-4">
-                                        <!-- Card Header - Dropdown -->
-                                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 class="m-0 font-weight-bold text-primary">Statistik Pengunjung</h6>
-                                            <div class="dropdown no-arrow">
-                                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                                </a>
-                                            </div>
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary">Daftar Artikel</h6>
+
                                         </div>
-                                        <!-- Card Body -->
                                         <div class="card-body">
-                                            <div class="chart-area">
-                                                <canvas id="myAreaChart"></canvas>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Judul Artikel</th>
+                                                            <th>Tanggal Publish</th>
+                                                            <th>Aksi</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Korean Caffe Hits Malang</td>
+                                                            <!-- format date terserah -->
+                                                            <td>12-03-2022</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
+                                                                <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                                                                <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>

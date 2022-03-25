@@ -14,19 +14,6 @@
     </li>
 
     <hr class="sidebar-divider">
-
-    <div class="sidebar-heading">
-        Artikel
-    </div>
-
-    <li class="nav-item">
-        <a class="nav-link" href="/myartikel">
-            <i class="fas fa-fw fa-newspaper"></i>
-            <span>Daftar Artikel</span>
-        </a>
-    </li>
-
-    <hr class="sidebar-divider">
     <div class="sidebar-heading">
         Pengaturan
     </div>
@@ -34,24 +21,13 @@
     <li class="nav-item">
         <a class="nav-link" href="">
             <i class="fas fa-fw fa-user"></i>
-            <span>Data Member</span>
+            <span>Profil</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="">
-            <i class="fas fa-fw fa-dollar-sign"></i>
-            <span>Data Metode Pembayaran</span>
-        </a>
-    </li>
-
-    <hr class="sidebar-divider">
-    <div class="sidebar-heading">
-        Manajemen Order
-    </div>
-    <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-receipt"></i>
-            <span>Data Pesanan</span>
+            <i class="fas fa-fw fa-sign-out-alt"></i>
+            <span>Keluar</span>
         </a>
     </li>
     <hr class="sidebar-divider">
