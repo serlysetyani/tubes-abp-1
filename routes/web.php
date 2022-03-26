@@ -46,3 +46,21 @@ Route::get('/artikelbaru', function () {
 Route::get('/ubahartikel', function () {
     return view('admin/ubahArtikel');
 });
+
+// user
+Route::get('/home', function () {
+    return view('users/index');
+});
+
+Route::get('/contact', function () {
+    return view('users/contact');
+});
+
+Route::get('/blog', function () {
+    return view('users/blog');
+});
+
+// buat detail artikel (/artikel/xxx) xx id artikel
+Route::get('/artikel', function () {
+    return view('users/detailArtikel');
+});
