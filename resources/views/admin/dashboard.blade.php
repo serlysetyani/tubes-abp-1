@@ -30,7 +30,7 @@
                         <div class="col-sm-12">
                             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                 <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                                <a href="#" class="d-none d-sm-inline-block btn btn btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Buat
+                                <a href="/artikelbaru" class="d-none d-sm-inline-block btn btn btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Buat
                                     Artikel</a>
                             </div>
                             <!-- Content ada di bawah sini -->
@@ -92,7 +92,7 @@
                                                             <td>12-03-2022</td>
                                                             <td>
                                                                 <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                                                                <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                                                                <button type="button" class="btn btn-success" onclick="window.location.href='/ubahartikel'"><i class="fas fa-edit"></i></button>
                                                                 <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                                                             </td>
                                                         </tr>

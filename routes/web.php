@@ -37,3 +37,12 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('auth/register');
 });
+
+// Artikel
+Route::get('/artikelbaru', function () {
+    return view('admin/tambahArtikel');
+});
+
+Route::get('/ubahartikel', function () {
+    return view('admin/ubahArtikel');
+});
