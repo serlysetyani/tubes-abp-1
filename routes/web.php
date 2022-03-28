@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,54 +15,66 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('testBootstrap');
-});
+// Route::get('/', function () {
+//     return view('users/index');
+// });
 
-Route::get('/dashboard', function () {
-    return view('admin/dashboard');
-});
+// Route::get('/dashboard', function () {
+//     return view('admin/dashboard');
+// });
 
-Route::get('/myartikel', function () {
-    return view('admin/artikelAnda');
-});
+// Route::get('/myartikel', function () {
+//     return view('admin/artikelAnda');
+// });
 
-Route::get('/profil', function () {
-    return view('admin/profil');
-});
+// Route::get('/profil', function () {
+//     return view('admin/profil');
+// });
 
-// Auth Kontributor
-Route::get('/login', function () {
-    return view('auth/login');
-});
+// // Auth Kontributor
+// Route::get('/login', function () {
+//     return view('auth/login');
+// });
 
-Route::get('/register', function () {
-    return view('auth/register');
-});
+// Route::get('/register', function () {
+//     return view('auth/register');
+// });
 
-// Artikel
-Route::get('/artikelbaru', function () {
-    return view('admin/tambahArtikel');
-});
+// // Artikel
+// Route::get('/artikelbaru', function () {
+//     return view('admin/tambahArtikel');
+// });
 
-Route::get('/ubahartikel', function () {
-    return view('admin/ubahArtikel');
-});
+// Route::get('/ubahartikel', function () {
+//     return view('admin/ubahArtikel');
+// });
 
-// user
-Route::get('/home', function () {
-    return view('users/index');
-});
+// // user
+// Route::get('/home', function () {
+//     return view('users/index');
+// });
 
-Route::get('/contact', function () {
-    return view('users/contact');
-});
+// Route::get('/contact', function () {
+//     return view('users/contact');
+// });
 
-Route::get('/blog', function () {
-    return view('users/blog');
-});
+// Route::get('/blog', function () {
+//     return view('users/blog');
+// });
 
-// buat detail artikel (/artikel/xxx) xx id artikel
-Route::get('/artikel', function () {
-    return view('users/detailArtikel');
-});
+// // buat detail artikel (/artikel/xxx) xx id artikel
+// Route::get('/artikel', function () {
+//     return view('users/detailArtikel');
+// });
+
+
+
+// Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+// Auth::routes();
+
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'show'])->name('login');
+
+Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'show'])->name('register');
