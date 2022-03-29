@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfilRequest;
 use App\Models\Contributor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class DashboardController extends Controller
 {
@@ -24,6 +27,30 @@ class DashboardController extends Controller
     {
         $data = ['LoggedUserInfo' => Contributor::where('id', '=', session('LoggedUser'))->first()];
         return view('admin.profil', $data);
+    }
+
+    public function updateProfil(ProfilRequest $request, $id)
+    {
+        $data = $request->all();
+
+        if ($request->password != "") {
+            $data['password'] = Hash::make($request->password);
+        }
+
+        if ($request->file('avatar')  != "") {
+            $data['avatar'] = $request->file('avatar')->store(
+                'assets/profil',
+                'public'
+            );
+        }
+        $profil = Contributor::findOrFail($id);
+        $profil->update($data);
+
+        if ($profil) {
+            return back()->with('success', 'Update User has been successfuly  to database');
+        } else {
+            return back()->with('fail', 'Something went wrong, try again later');
+        }
     }
 
     /**

@@ -35,6 +35,18 @@
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
                             <form method="POST" action="{{ route('save') }}" class="user">
+                                @if(Session::get('success'))
+                                    <div class="alert alert-success">
+                                        {{ Session::get('success') }}
+                                    </div>
+                                @endif
+
+                                @if(Session::get('fail'))
+                                    <div class="alert alert-danger">
+                                        {{ Session::get('fail') }}
+                                    </div>
+                                @endif
+
                                 @csrf
                                 <div class="form-group">
                                     <input type="text" name="username" class="form-control form-control-user" id="exampleInputEmail" placeholder="Username" value="{{ old('username') }}">

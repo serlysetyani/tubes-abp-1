@@ -36,36 +36,64 @@
                                 <div class="row">
                                     <!-- left column -->
                                     <div class="col-md-4 col-sm-6 col-xs-12">
-                                        <div class="text-center">
+                                        {{-- <div class="text-center">
                                             <img src="/img/undraw_profile.svg" class="avatar img-circle img-thumbnail mb-4" alt="avatar" width="100px" height="100px">
                                             <input type="file" class="text-center center-block well well-sm">
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <!-- edit form column -->
                                     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-                                        <form class="form-horizontal" role="form">
+                                        <form action="{{ route('update-profil', $LoggedUserInfo['id'] ) }}" class="form-horizontal" role="form" method="POST" enctype="multipart/form-data">
+                                            @method('PUT')
+
+                                            @if(Session::get('success'))
+                                                <div class="alert alert-success">
+                                                    {{ Session::get('success') }}
+                                                </div>
+                                            @endif
+
+                                            @if(Session::get('fail'))
+                                                <div class="alert alert-danger">
+                                                    {{ Session::get('fail') }}
+                                            </div>
+                                            @endif
+                                            @csrf
+
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Username:</label>
                                                 <div class="col-md-8">
-                                                    <input class="form-control" value="{{ $LoggedUserInfo['username'] }}" type="text">
+                                                    <input name="username" class="form-control" value="{{ old('username') ? old('username') : $LoggedUserInfo['username'] }}"  type="text">
+                                                    <span class="text-danger">@error('username'){{ $message }}@enderror</span>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Password:</label>
                                                 <div class="col-md-8">
-                                                    <input class="form-control" value="11111122333" type="password">
+                                                    <input name="password" class="form-control" value="{{ old('password') ? old('password') : $LoggedUserInfo['password'] }}" type="password">
+                                                    <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                                                 </div>
                                             </div>
+                                            <br>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Confirm password:</label>
-                                                <div class="col-md-8">
-                                                    <input class="form-control" value="11111122333" type="password">
+                                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                                    <div class="text-left">
+                                                        @if($LoggedUserInfo['avatar'] != "")
+                                                        <img src="{{ url($LoggedUserInfo['avatar']) }}" class="avatar img-circle img-thumbnail mb-3" alt="avatar" width="100px" height="100px">
+                                                        @else
+                                                        <img src="/img/undraw_profile.svg" class="avatar img-circle img-thumbnail mb-3" alt="avatar" width="100px" height="100px">
+                                                        @endif
+                                                        <input  value="{{ old('avatar') ? old('avatar') : $LoggedUserInfo['avatar'] }}"  name="avatar" type="file" class="text-center center-block well well-sm">
+                                                        <span class="text-danger">@error('avatar'){{ $message }}@enderror</span>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label"></label>
                                                 <div class="col-md-8">
-                                                    <input class="btn btn-primary" value="Simpan" type="button">
+                                                    <button type="submit" class="btn btn-primary btn-user btn-small">
+                                                        Simpan
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>

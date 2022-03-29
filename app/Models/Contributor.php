@@ -12,8 +12,13 @@ class Contributor extends Model
     protected $table = 'contributor';
 
     protected $fillable = [
-        'username', 'password',
+        'username', 'password', 'avatar'
     ];
 
     protected $hidden = [];
+
+    public function getAvatarAttribute($value)
+    {
+        return url('storage/' . $value);
+    }
 }

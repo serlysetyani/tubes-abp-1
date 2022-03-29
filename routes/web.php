@@ -78,10 +78,10 @@ Route::post('/save', [App\Http\Controllers\Auth\RegisterController::class, 'save
 Route::post('/check', [App\Http\Controllers\Auth\LoginController::class, 'check'])->name('check');
 Route::get('/logout', [App\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('logout');
 
-
 Route::group(['middleware' => ['AuthCheck']], function () {
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
     Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'show'])->name('login');
     Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'show'])->name('register');
     Route::get('/profil', [App\Http\Controllers\DashboardController::class, 'profil'])->name('profil');
+    Route::put('/update-profil/{id}', [App\Http\Controllers\DashboardController::class, 'updateProfil'])->name('update-profil');
 });
