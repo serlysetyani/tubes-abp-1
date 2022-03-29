@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Models\Contributor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 
 class LoginController extends Controller
@@ -15,17 +18,26 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function login(LoginRequest $request)
+    function check(Request $request)
     {
-        $credentials = $request->getCredentials();
+        //Validate requests
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required|min:8'
+        ]);
 
-        if (!Auth::validate($credentials)) :
-            return view('auth.login');
-        endif;
-        $user = Auth::getProvider()->retrieveByCredentials($credentials);
+        $userInfo = Contributor::where('username', '=', $request->username)->first();
 
-        Auth::login($user);
-
-        return $this->authenticated($request, $user);
+        if (!$userInfo) {
+            return back()->with('fail', 'We do not recognize your username');
+        } else {
+            //check password
+            if (Hash::check($request->password, $userInfo->password)) {
+                $request->session()->put('LoggedUser', $userInfo->id);
+                return redirect('dashboard');
+            } else {
+                return back()->with('fail', 'Incorrect password');
+            }
+        }
     }
 }

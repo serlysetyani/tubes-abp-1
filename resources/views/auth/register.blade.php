@@ -34,23 +34,24 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form method="POST" action="{{ route('register') }}" class="user">
+                            <form method="POST" action="{{ route('save') }}" class="user">
                                 @csrf
-
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Username" value="{{ old('username') }}">
+                                    <input type="text" name="username" class="form-control form-control-user" id="exampleInputEmail" placeholder="Username" value="{{ old('username') }}">
+                                    <span class="text-danger">@error('username'){{ $message }}@enderror</span>
                                 </div>
                                 <div class="form-group ">
-                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" value="{{ old('password') }}">
+                                    <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" value="{{ old('password') }}">
+                                    <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                                 </div>
-                                <a href="{{ route('dashboard') }}" class="btn btn-primary btn-user btn-block">
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Register Account
-                                </a>
+                                </button>
                                 <hr>
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="/login">Already have an account? Login!</a>
+                                <a class="small" href="{{ route('login') }}">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>

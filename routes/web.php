@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/', function () {
-//     return view('users/index');
-// });
+Route::get('/', function () {
+    return view('users/index');
+});
 
 // Route::get('/dashboard', function () {
 //     return view('admin/dashboard');
@@ -50,9 +50,9 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 // // user
-// Route::get('/home', function () {
-//     return view('users/index');
-// });
+Route::get('/home', function () {
+    return view('users/index');
+});
 
 // Route::get('/contact', function () {
 //     return view('users/contact');
@@ -73,8 +73,15 @@ use Illuminate\Support\Facades\Auth;
 
 // Auth::routes();
 
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'show'])->name('login');
+Route::post('/save', [App\Http\Controllers\Auth\RegisterController::class, 'save'])->name('save');
+Route::post('/check', [App\Http\Controllers\Auth\LoginController::class, 'check'])->name('check');
+Route::get('/logout', [App\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('logout');
 
-Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'show'])->name('register');
+
+Route::group(['middleware' => ['AuthCheck']], function () {
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'show'])->name('login');
+    Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'show'])->name('register');
+    Route::get('/profil', [App\Http\Controllers\DashboardController::class, 'profil'])->name('profil');
+});

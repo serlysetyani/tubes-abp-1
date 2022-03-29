@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contributor;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,15 +13,17 @@ class DashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
 
     public function index()
     {
         return view('admin.dashboard');
+    }
+
+    public function profil()
+    {
+        $data = ['LoggedUserInfo' => Contributor::where('id', '=', session('LoggedUser'))->first()];
+        return view('admin.profil', $data);
     }
 
     /**

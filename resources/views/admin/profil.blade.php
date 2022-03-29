@@ -47,7 +47,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Username:</label>
                                                 <div class="col-md-8">
-                                                    <input class="form-control" value="janeuser" type="text">
+                                                    <input class="form-control" value="{{ $LoggedUserInfo['username'] }}" type="text">
                                                 </div>
                                             </div>
                                             <div class="form-group">

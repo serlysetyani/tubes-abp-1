@@ -9,12 +9,11 @@ use Illuminate\Support\Facades\Session;
 
 class LogoutController extends Controller
 {
-    public function perform()
+    function logout()
     {
-        Session::flush();
-
-        Auth::logout();
-
-        return view('auth.login');
+        if (session()->has('LoggedUser')) {
+            session()->pull('LoggedUser');
+            return redirect('login');
+        }
     }
 }

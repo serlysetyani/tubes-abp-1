@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
-use APP\Models\User;
+use App\Models\Contributor;
+use Illuminate\Support\Facades\Hash;
+
 
 class RegisterController extends Controller
 {
@@ -15,12 +17,17 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
-    public function register(RegisterRequest $request)
+    public function save(RegisterRequest $request)
     {
-        $user = User::create($request->validated());
+        $user = new Contributor;
+        $user->username = $request->username;
+        $user->password = Hash::make($request->password);
+        $save = $user->save();
 
-        auth()->login($user);
-
-        return view('admin.dashboard');
+        if ($save) {
+            return back()->with('success', 'New User has been successfuly added to database');
+        } else {
+            return back()->with('fail', 'Something went wrong, try again later');
+        }
     }
 }
