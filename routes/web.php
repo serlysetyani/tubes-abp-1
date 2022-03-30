@@ -83,5 +83,8 @@ Route::group(['middleware' => ['AuthCheck']], function () {
     Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'show'])->name('login');
     Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'show'])->name('register');
     Route::get('/profil', [App\Http\Controllers\DashboardController::class, 'profil'])->name('profil');
+    Route::get('/artikelbaru', [App\Http\Controllers\DashboardController::class, 'create'])->name('artikelbaru');
+
     Route::put('/update-profil/{id}', [App\Http\Controllers\DashboardController::class, 'updateProfil'])->name('update-profil');
+    Route::post('/create-artikel', [App\Http\Controllers\DashboardController::class, 'store'])->name('createArtikel');
 });

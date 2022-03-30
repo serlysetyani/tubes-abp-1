@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArticleRequest;
 use App\Http\Requests\ProfilRequest;
 use App\Models\Contributor;
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -60,7 +62,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tambahArtikel');
     }
 
     /**
@@ -69,9 +71,17 @@ class DashboardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        //
+        $data = $request->request->all();
+        $data['user_id'] = session('LoggedUser');
+        $data['photo'] = $request->file('photo')->store(
+            'assets/article',
+            'public'
+        );
+
+        Article::create($data);
+        return redirect()->route('dashboard');
     }
 
     /**

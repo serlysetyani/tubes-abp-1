@@ -33,19 +33,40 @@
                             </div>
                             <!-- Content ada di bawah sini -->
                             <div class="row">
+                                <form action="{{ route('createArtikel') }}" method="POST" enctype="multipart/form-data">
+                                    @if(Session::get('success'))
+                                        <div class="alert alert-success">
+                                            {{ Session::get('success') }}
+                                        </div>
+                                    @endif
+
+                                    @if(Session::get('fail'))
+                                        <div class="alert alert-danger">
+                                            {{ Session::get('fail') }}
+                                        </div>
+                                    @endif
+
+                                    @csrf
                                 <div class="form-floating mb-3 col-xl-12 col-lg-7">
                                     <label for="floatingInput">Judul Artikel</label>
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                    <input name="title" type="text" class="form-control" id="floatingInput" placeholder="judul" value="{{ old('title') }}">
+                                    <span class="text-danger">@error('title'){{ $message }}@enderror</span>
                                 </div>
                                 <div class="mb-3 col-xl-12 col-lg-7">
-                                    <label for="formFile" class="form-label">Header Artikel</label>
-                                    <input class="form-control" type="file" id="formFile">
+                                    <label  for="formFile" class="form-label">Header Artikel</label>
+                                    <input accept="image/*" required name="photo" class="form-control" type="file" id="formFile" value="{{ old('photo') }}">
+                                    <span class="text-danger">@error('photo'){{ $message }}@enderror</span>
                                 </div>
                                 <div class="form-floating col-xl-12 col-lg-7">
-                                    <textarea class="form-control" placeholder="Isi artikel mu disini..." id="floatingTextarea2" style="height: 100px"></textarea>
-                                    <input class="btn btn-primary mt-3" type="submit" value="Submit">
+                                    <textarea name="description" class="form-control" placeholder="Isi artikel mu disini..." id="floatingTextarea2" style="height: 100px">
+                                        {{ old('description') }}
+                                    </textarea>
+                                    <span class="text-danger">@error('description'){{ $message }}@enderror</span>
+                                    <button class="btn btn-primary mt-3" type="submit" >
+                                    Submit
+                                    </button>
                                 </div>
-
+                            </form>
                             </div>
                             <!-- end of class row -->
                         </div>
