@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('users/index');
-});
 
 // Route::get('/dashboard', function () {
 //     return view('admin/dashboard');
@@ -50,9 +47,9 @@ Route::get('/', function () {
 // });
 
 // // user
-Route::get('/home', function () {
-    return view('users/index');
-});
+// Route::get('/home', function () {
+//     return view('users/index');
+// });
 
 // Route::get('/contact', function () {
 //     return view('users/contact');
@@ -73,7 +70,9 @@ Route::get('/home', function () {
 
 // Auth::routes();
 
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::resource('home', 'App\Http\Controllers\HomeController');
 
 Route::post('/save', [App\Http\Controllers\Auth\RegisterController::class, 'save'])->name('save');
 Route::post('/check', [App\Http\Controllers\Auth\LoginController::class, 'check'])->name('check');
