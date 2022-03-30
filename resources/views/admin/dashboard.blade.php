@@ -16,6 +16,13 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+    <style>
+        .center-paginat {
+            margin: auto;
+            width: 10%;
+            padding: 15px;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -43,7 +50,7 @@
                                                 <div class="col mr-2">
                                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                         Jumlah Artikel</div>
-                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">100 <span>Artikel</span></div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $jumlah->count()  }} <span>Artikel</span></div>
                                                 </div>
                                                 <div class="col-auto">
                                                     <i class="fas fa-newspaper fa-2x text-gray-300"></i>
@@ -77,7 +84,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="table-responsive">
-                                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                                <table class=" text-center table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                     <thead>
                                                         <tr>
                                                             <th>Judul Artikel</th>
@@ -86,18 +93,33 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                    @if(!empty($data) && $data->count())
+                                                        @foreach($data as $key => $value)
                                                         <tr>
-                                                            <td>Korean Caffe Hits Malang</td>
+                                                            <td>{{ $value->title }}</td>
                                                             <!-- format date terserah -->
-                                                            <td>12-03-2022</td>
+                                                            <td>{{ $value->created_at }}</td>
                                                             <td>
                                                                 <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
                                                                 <button type="button" class="btn btn-success" onclick="window.location.href='/ubahartikel'"><i class="fas fa-edit"></i></button>
-                                                                <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                                                <form class="d-inline" action="{{ route('deleteArtikel', $value->id) }}" method="post">
+                                                                    @csrf
+                                                                    @method('delete')
+                                                                    <button  class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                                                </form>
                                                             </td>
                                                         </tr>
+                                                        @endforeach
+                                                    @else
+                                                        <tr>
+                                                            <td colspan="10">There are no data.</td>
+                                                        </tr>
+                                                    @endif
                                                     </tbody>
                                                 </table>
+                                                <div class="center-paginat">
+                                                    {!! $data->links() !!}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -121,7 +143,7 @@
     <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="/js/sb-admin-2.min.js"></script>
 
-    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+    {{-- <script src="/vendor/datatables/jquery.dataTables.min.js"></script> --}}
     <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="/js/demo/datatables-demo.js"></script>
 

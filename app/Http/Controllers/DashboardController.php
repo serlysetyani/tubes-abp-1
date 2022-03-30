@@ -22,7 +22,33 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('admin.dashboard');
+        $data = Article::where('user_id', '=', session('LoggedUser'))->paginate(5);
+        $jumlah = Article::where('user_id', '=', session('LoggedUser'));
+        return view('admin.dashboard')->with([
+            'data' => $data,
+            'jumlah' => $jumlah
+        ]);
+    }
+
+    public function search(Request $request)
+    {
+        // Get the search value from the request
+        $search = $request->input('search');
+
+        // Search in the title and body columns from the posts table
+        $data = Article::query()
+            ->where('title', 'LIKE', "%{$search}%")
+            ->where('user_Id', '=', session('LoggedUser'))
+            ->paginate(5);
+
+        $jumlah = Article::where('user_id', '=', session('LoggedUser'));
+
+
+        // Return the search view with the resluts compacted
+        return view('admin.dashboard')->with([
+            'data' => $data,
+            'jumlah' => $jumlah
+        ]);
     }
 
     public function profil()
@@ -126,6 +152,8 @@ class DashboardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Article::findOrFail($id);
+        $item->delete();
+        return redirect()->route('dashboard');
     }
 }

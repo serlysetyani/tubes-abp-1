@@ -79,6 +79,7 @@ Route::post('/check', [App\Http\Controllers\Auth\LoginController::class, 'check'
 Route::get('/logout', [App\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => ['AuthCheck']], function () {
+    Route::get('/search/', [App\Http\Controllers\DashboardController::class, 'search'])->name('search');
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
     Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'show'])->name('login');
     Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'show'])->name('register');
@@ -87,4 +88,5 @@ Route::group(['middleware' => ['AuthCheck']], function () {
 
     Route::put('/update-profil/{id}', [App\Http\Controllers\DashboardController::class, 'updateProfil'])->name('update-profil');
     Route::post('/create-artikel', [App\Http\Controllers\DashboardController::class, 'store'])->name('createArtikel');
+    Route::delete('/dashboard/delete-artikel/{id}', [App\Http\Controllers\DashboardController::class, 'destroy'])->name('deleteArtikel');
 });
