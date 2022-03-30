@@ -32,8 +32,8 @@
                                 <h1 class="h3 mb-0 text-gray-800">Buat Artikel</h1>
                             </div>
                             <!-- Content ada di bawah sini -->
+                            <form action="{{ route('createArtikel') }}" method="POST" enctype="multipart/form-data">
                             <div class="row">
-                                <form action="{{ route('createArtikel') }}" method="POST" enctype="multipart/form-data">
                                     @if(Session::get('success'))
                                         <div class="alert alert-success">
                                             {{ Session::get('success') }}
@@ -66,8 +66,8 @@
                                     Submit
                                     </button>
                                 </div>
-                            </form>
                             </div>
+                        </form>
                             <!-- end of class row -->
                         </div>
                     </div>

@@ -74,11 +74,14 @@ Route::get('/home', function () {
 // Auth::routes();
 
 
+
 Route::post('/save', [App\Http\Controllers\Auth\RegisterController::class, 'save'])->name('save');
 Route::post('/check', [App\Http\Controllers\Auth\LoginController::class, 'check'])->name('check');
 Route::get('/logout', [App\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => ['AuthCheck']], function () {
+    Route::resource('article', 'App\Http\Controllers\DashboardController');
+
     Route::get('/search/', [App\Http\Controllers\DashboardController::class, 'search'])->name('search');
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
     Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'show'])->name('login');

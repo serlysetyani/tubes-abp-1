@@ -129,7 +129,8 @@ class DashboardController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Article::findOrfail($id);
+        return view('admin.ubahArtikel', compact('data'));
     }
 
     /**
@@ -139,9 +140,26 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ArticleRequest $request, $id)
     {
-        //
+        $update = Article::findOrFail($id);
+
+        $data = $request->all();
+
+        if ($request->file('photo')  != "") {
+            $data['photo'] = $request->file('photo')->store(
+                'assets/article',
+                'public'
+            );
+        }
+
+        $update->update($data);
+
+        if ($update) {
+            return redirect()->route('dashboard');
+        } else {
+            return back()->with('fail', 'Something went wrong, try again later');
+        }
     }
 
     /**

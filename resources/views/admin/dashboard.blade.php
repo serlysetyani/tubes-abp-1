@@ -101,7 +101,7 @@
                                                             <td>{{ $value->created_at }}</td>
                                                             <td>
                                                                 <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                                                                <button type="button" class="btn btn-success" onclick="window.location.href='/ubahartikel'"><i class="fas fa-edit"></i></button>
+                                                                <button type="button" class="btn btn-success" onclick="window.location.href='{{ route('article.edit', $value->id) }}'"><i class="fas fa-edit"></i></button>
                                                                 <form class="d-inline" action="{{ route('deleteArtikel', $value->id) }}" method="post">
                                                                     @csrf
                                                                     @method('delete')
