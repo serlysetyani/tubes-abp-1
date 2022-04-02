@@ -8,7 +8,7 @@
                         <div class="col-sm-7 col-sm-push-1 col-md-7 col-md-push-1">
                             <p>Selamat datang di</a></p>
                             <h2>Halo Ngalam!</h2>
-                            <h3>Fly to Hong Kong via Los Angeles, USA</h3>
+                            <h3>Seputar Informasi Pariwisata Malang!</h3>
                             <p><a class="btn btn-primary btn-lg" href="#">Get Started</a></p>
                         </div>
                     </div>
