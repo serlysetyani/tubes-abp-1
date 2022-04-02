@@ -103,9 +103,8 @@
                                     <div class="prod-title">
                                         <h3><a href="#">{{ $value->title }}</a></h3>
                                         <span class="posted_by">{{ $value->created_at }}</span>
-                                        <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
                                         <p>{{ $value->description }}</p>
-                                        <p><a href="#">Learn More...</a></p>
+                                        <p><a href="#">Baca Selengkapnya...</a></p>
                                     </div>
                                 </div>
                             </div>
