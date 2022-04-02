@@ -51,13 +51,13 @@ use Illuminate\Support\Facades\Auth;
 //     return view('users/index');
 // });
 
-// Route::get('/contact', function () {
-//     return view('users/contact');
-// });
+Route::get('/contact', function () {
+    return view('users/contact');
+});
 
-// Route::get('/blog', function () {
-//     return view('users/blog');
-// });
+Route::get('/blog', function () {
+    return view('users/blog');
+});
 
 // // buat detail artikel (/artikel/xxx) xx id artikel
 // Route::get('/artikel', function () {

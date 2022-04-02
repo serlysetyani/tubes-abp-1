@@ -87,8 +87,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                            <h3>Recent From Blog</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
+                            <h3>Artikel Terbaru</h3>
+                            <p>Artikel paling up to date seputar pariwisata di Malang</p>
                         </div>
                     </div>
                 </div>
@@ -113,13 +113,13 @@
                         <div class="clearfix visible-sm-block"></div>
                         @endforeach
                         @else
-                            <h2>DATA KOSONG!!</h2>
+                            <h2>Belum Ada Artikel</h2>
                         @endif
                     </div>
 
 
                     <div class="col-md-12 text-center animate-box">
-                        <p><a class="btn btn-primary btn-outline btn-lg" href="#">See All Post <i class="icon-arrow-right22"></i></a></p>
+                        <p><a class="btn btn-primary btn-outline btn-lg" href="/blog">Lihat Semua <i class="icon-arrow-right22"></i></a></p>
                     </div>
 
                 </div>
@@ -169,8 +169,8 @@
                                 <li class="one-half text-center">
                                     <div class="title-bg">
                                         <div class="case-studies-summary">
-                                            <h2>Most Popular Destinations</h2>
-                                            <span><a href="#">View All Destinations</a></span>
+                                            <h2>Destinasi Pariwisata Terfavorit</h2>
+                                            <span><a href="#">Lihat Semua Destinasi</a></span>
                                         </div>
                                     </div>
                                 </li>
