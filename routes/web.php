@@ -71,6 +71,7 @@ Route::get('/blog', function () {
 // Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
 
 Route::resource('home', 'App\Http\Controllers\HomeController');
 

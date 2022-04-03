@@ -169,7 +169,7 @@
                                     <div class="title-bg">
                                         <div class="case-studies-summary">
                                             <h2>Destinasi Pariwisata Terfavorit</h2>
-                                            <span><a href="#">Lihat Semua Destinasi</a></span>
+                                            <span><a href="/blog">Lihat Semua Destinasi</a></span>
                                         </div>
                                     </div>
                                 </li>

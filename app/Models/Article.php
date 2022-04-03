@@ -19,4 +19,9 @@ class Article extends Model
     {
         return url('storage/' . $value);
     }
+
+    public function contributor()
+    {
+        return $this->belongsTo(Contributor::class, 'user_id', 'id');
+    }
 }

@@ -18,6 +18,13 @@ class HomeController extends Controller
         return view('users.index', compact('data'));
     }
 
+    public function blog()
+    {
+        $blog = Article::join('contributor', 'contributor.id', '=', 'articles.user_id')
+            ->get(['articles.*', 'contributor.username']);
+        return view('users.blog', compact('blog'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

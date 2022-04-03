@@ -21,4 +21,9 @@ class Contributor extends Model
     {
         return url('storage/' . $value);
     }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class, 'user_id');
+    }
 }
