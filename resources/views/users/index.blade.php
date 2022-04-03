@@ -104,7 +104,7 @@
                                         <h3><a href="#">{{ $value->title }}</a></h3>
                                         <span class="posted_by">{{ $value->created_at }}</span>
                                         <p>{{ $value->description }}</p>
-                                        <p><a href="#">Baca Selengkapnya...</a></p>
+                                        <p><a href="{{ route('home.show', $value->id) }}">Baca Selengkapnya...</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@
                         <div class="clearfix visible-sm-block"></div>
                         @endforeach
                         @else
-                            <h2>Belum Ada Artikel</h2>
+                            <h2 class="text-center">Belum Ada Artikel</h2>
                         @endif
                     </div>
 

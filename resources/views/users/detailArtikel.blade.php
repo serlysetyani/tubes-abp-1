@@ -8,34 +8,34 @@
     <meta name="author" content="" />
     <title>Blog Post - Start Bootstrap Template</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
     <link rel="shortcut icon" href="favicon.ico">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <!-- Superfish -->
-    <link rel="stylesheet" href="css/superfish.css">
+    <link rel="stylesheet" href="{{ asset('css/superfish.css') }}">
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
     <!-- CS Select -->
-    <link rel="stylesheet" href="css/cs-select.css">
-    <link rel="stylesheet" href="css/cs-skin-border.css">
+    <link rel="stylesheet" href="{{ asset('css/cs-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cs-skin-border.css') }}">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 
     <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -54,65 +54,19 @@
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">Welcome to Blog Post!</h1>
+                        <h1 class="fw-bolder mb-1">{{ $article->title }}</h1>
                         <!-- Post meta content-->
-                        <div class="text-muted fst-italic mb-2">Posted on January 1, 2022 by Start Bootstrap</div>
+                        <div class="text-muted fst-italic mb-2">Posted on {{ $article->created_at }} by
+                              <b>{{ $data->username }}</b></div>
                         <!-- Post categories-->
                     </header>
                     <!-- Preview image figure-->
-                    <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
+                    <figure class="mb-4"><img class="img-fluid rounded" src="{{ url($article->photo) }}" alt="..." /></figure>
                     <!-- Post content-->
                     <section class="mb-5">
-                        <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe.</p>
-                        <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.</p>
-                        <p class="fs-5 mb-4">If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.</p>
-                        <h2 class="fw-bolder mb-4 mt-5">I have odd cosmic thoughts every day</h2>
-                        <p class="fs-5 mb-4">For me, the most fascinating interface is Twitter. I have odd cosmic thoughts every day and I realized I could hold them to myself or share them with people who might be interested.</p>
-                        <p class="fs-5 mb-4">Venus has a runaway greenhouse effect. I kind of want to know what happened there because we're twirling knobs here on Earth without knowing the consequences of it. Mars once had running water. It's bone dry today. Something bad happened there as well.</p>
+                        <p class="fs-5 mb-4">{{ $article->description }}</p>
                     </section>
                 </article>
-                <!-- Comments section-->
-                <section class="mb-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <!-- Comment form-->
-                            <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
-                            <!-- Comment with nested comments-->
-                            <div class="d-flex mb-4">
-                                <!-- Parent comment-->
-                                <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                <div class="ms-3">
-                                    <div class="fw-bold">Commenter Name</div>
-                                    If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
-                                    <!-- Child comment 1-->
-                                    <div class="d-flex mt-4">
-                                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                        <div class="ms-3">
-                                            <div class="fw-bold">Commenter Name</div>
-                                            And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
-                                        </div>
-                                    </div>
-                                    <!-- Child comment 2-->
-                                    <div class="d-flex mt-4">
-                                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                        <div class="ms-3">
-                                            <div class="fw-bold">Commenter Name</div>
-                                            When you put money directly to a problem, it makes a good headline.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single comment-->
-                            <div class="d-flex">
-                                <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                <div class="ms-3">
-                                    <div class="fw-bold">Commenter Name</div>
-                                    When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
             <!-- Side widgets-->
         </div>
@@ -122,7 +76,7 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
 </body>
 
 </html>

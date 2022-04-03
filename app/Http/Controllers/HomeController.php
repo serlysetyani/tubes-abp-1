@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Contributor;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -53,7 +54,14 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        return view('users/detailArtikel');
+        $article = Article::findOrFail($id);
+        $data = Contributor::with('articles')->find($article->user_id);
+
+
+        return view('users/detailArtikel')->with([
+            'article' => $article,
+            'data' => $data,
+        ]);
     }
 
     /**
