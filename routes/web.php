@@ -51,7 +51,7 @@ use Illuminate\Support\Facades\Auth;
 //     return view('users/index');
 // });
 
-Route::get('/contact', function () {
+Route::get('/tentangkami', function () {
     return view('users/contact');
 });
 

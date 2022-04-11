@@ -8,7 +8,7 @@
                 <ul class="sf-menu" id="fh5co-primary-menu">
                     <li><a href="/home">Home</a></li>
                     <li><a href="/blog">Blog</a></li>
-                    <li><a href="/contact">Kontak</a></li>
+                    <li><a href="/tentangkami">Tentang Kami</a></li>
                     <li><a href="/login">Login</a></li>
                 </ul>
             </nav>

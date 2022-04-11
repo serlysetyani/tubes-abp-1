@@ -16,18 +16,18 @@
     <meta name="author" content="FREEHTML5.CO" />
 
     <!--
-	//////////////////////////////////////////////////////
+ //////////////////////////////////////////////////////
 
-	FREE HTML5 TEMPLATE
-	DESIGNED & DEVELOPED by FREEHTML5.CO
+ FREE HTML5 TEMPLATE
+ DESIGNED & DEVELOPED by FREEHTML5.CO
 
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
+ Website: 		http://freehtml5.co/
+ Email: 			info@freehtml5.co
+ Twitter: 		http://twitter.com/fh5co
+ Facebook: 		https://www.facebook.com/fh5co
 
-	//////////////////////////////////////////////////////
-	 -->
+ //////////////////////////////////////////////////////
+ -->
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="favicon.ico">
@@ -57,8 +57,8 @@
     <script src="js/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+ <script src="js/respond.min.js"></script>
+ <![endif]-->
 
 </head>
 
@@ -72,67 +72,69 @@
 
                 <div class="container">
                     <div class="row row-bottom-padded-md">
-                        @if(!empty($blog) && $blog->count())
-                            @foreach($blog as $key => $value)
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="fh5co-blog animate-box">
-                                <a href="#"><img class="img-responsive" src="{{ url($value->photo) }}" alt=""></a>
-                                <div class="blog-text">
-                                    <div class="prod-title">
-                                        <h3><a href="#">{{ $value->title }}</a></h3>
-                                        <span class="posted_by">{{ $value->created_at }}</span>
-                                        <p>{{ $value->description }}</p>
-                                        <p><a href="{{ route('home.show', $value->id) }}">Baca Selengkapnya...</a></p>
+                        @if (!empty($blog) && $blog->count())
+                            @foreach ($blog as $key => $value)
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="fh5co-blog animate-box">
+                                        <a href="#"><img class="img-responsive" src="{{ url($value->photo) }}"
+                                                alt=""></a>
+                                        <div class="blog-text">
+                                            <div class="prod-title">
+                                                <h3><a href="#">{{ $value->title }}</a></h3>
+                                                <span class="posted_by">{{ $value->created_at }}</span>
+                                                <p>{!! \Illuminate\Support\Str::limit($value->description, 5, '....') !!}</p>
+                                                <p><a href="{{ route('home.show', $value->id) }}">Baca
+                                                        Selengkapnya...</a></p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="clearfix visible-sm-block"></div>
-                        @endforeach
+                                <div class="clearfix visible-sm-block"></div>
+                            @endforeach
                         @else
                             <h2 class="text-center">Belum Ada Artikel</h2>
                         @endif
                     </div>
 
 
-            </div>
+                </div>
 
-            @include('_partials.footer2')
+                @include('_partials.footer2')
+
+            </div>
+            <!-- END fh5co-page -->
 
         </div>
-        <!-- END fh5co-page -->
+        <!-- END fh5co-wrapper -->
 
-    </div>
-    <!-- END fh5co-wrapper -->
-
-    <!-- jQuery -->
+        <!-- jQuery -->
 
 
-    <script src="js/jquery.min.js"></script>
-    <!-- jQuery Easing -->
-    <script src="js/jquery.easing.1.3.js"></script>
-    <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Waypoints -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/sticky.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <!-- jQuery Easing -->
+        <script src="js/jquery.easing.1.3.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Waypoints -->
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/sticky.js"></script>
 
-    <!-- Stellar -->
-    <script src="js/jquery.stellar.min.js"></script>
-    <!-- Superfish -->
-    <script src="js/hoverIntent.js"></script>
-    <script src="js/superfish.js"></script>
-    <!-- Magnific Popup -->
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/magnific-popup-options.js"></script>
-    <!-- Date Picker -->
-    <script src="js/bootstrap-datepicker.min.js"></script>
-    <!-- CS Select -->
-    <script src="js/classie.js"></script>
-    <script src="js/selectFx.js"></script>
+        <!-- Stellar -->
+        <script src="js/jquery.stellar.min.js"></script>
+        <!-- Superfish -->
+        <script src="js/hoverIntent.js"></script>
+        <script src="js/superfish.js"></script>
+        <!-- Magnific Popup -->
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/magnific-popup-options.js"></script>
+        <!-- Date Picker -->
+        <script src="js/bootstrap-datepicker.min.js"></script>
+        <!-- CS Select -->
+        <script src="js/classie.js"></script>
+        <script src="js/selectFx.js"></script>
 
-    <!-- Main JS -->
-    <script src="js/main.js"></script>
+        <!-- Main JS -->
+        <script src="js/main.js"></script>
 
 </body>
 

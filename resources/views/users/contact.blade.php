@@ -1,46 +1,11 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Travel &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-    <meta name="author" content="FREEHTML5.CO" />
-
-    <!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:description" content="" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
-
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="favicon.ico">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
@@ -64,12 +29,7 @@
     <link rel="stylesheet" href="css/style.css">
 
 
-    <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
 
 </head>
 
@@ -83,85 +43,91 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                            <h3>Kontak Halo Ngalam!</h3>
+                            <h3>Tentang Kami</h3>
                         </div>
                     </div>
-                    <form action="#">
-                        <div class="row animate-box">
-                            <div class="col-md-6">
-                                <h3 class="section-title">Alamat Kami</h3>
-                                <ul class="contact-info">
-                                    <li><i class="icon-location-pin"></i>Jl. Danau Ranau, Sawojajar, Kec. Kedungkandang, Kota Malang, Jawa Timur 65139</li>
-                                    <li><i class="icon-phone2"></i>+ 1235 2355 98</li>
-                                    <li><i class="icon-mail"></i><a href="#">info@halongalam.com</a></li>
-                                    <li><i class="icon-globe2"></i><a href="#">www.halongalam.com</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nama">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Pesan"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="submit" value="Kirim" class="btn btn-primary">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    <div class="row">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col">NIM</th>
+                                    <th scope="col">Role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>BAYU MUHAMMAD IQBAL</td>
+                                    <td>1301184241</td>
+                                    <td>Backend Developer</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>SERLY SETYANI</td>
+                                    <td>1301190225</td>
+                                    <td>Frontend Developer</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>EDVAN TAZUL ARIFIN</td>
+                                    <td>1301184270</td>
+                                    <td>Proposal</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>RAYHAN ZANZABILA</td>
+                                    <td>1301191072</td>
+                                    <td>Proposal</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>ALIFIA SHAFIRA</td>
+                                    <td>1301194102</td>
+                                    <td>Proposal</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
 
-            @include('_partials.footer2')
+                @include('_partials.footer2')
+
+            </div>
+            <!-- END fh5co-page -->
 
         </div>
-        <!-- END fh5co-page -->
+        <!-- END fh5co-wrapper -->
 
-    </div>
-    <!-- END fh5co-wrapper -->
-
-    <!-- jQuery -->
+        <!-- jQuery -->
 
 
-    <script src="js/jquery.min.js"></script>
-    <!-- jQuery Easing -->
-    <script src="js/jquery.easing.1.3.js"></script>
-    <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Waypoints -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/sticky.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <!-- jQuery Easing -->
+        <script src="js/jquery.easing.1.3.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Waypoints -->
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/sticky.js"></script>
 
-    <!-- Stellar -->
-    <script src="js/jquery.stellar.min.js"></script>
-    <!-- Superfish -->
-    <script src="js/hoverIntent.js"></script>
-    <script src="js/superfish.js"></script>
-    <!-- Magnific Popup -->
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/magnific-popup-options.js"></script>
-    <!-- Date Picker -->
-    <script src="js/bootstrap-datepicker.min.js"></script>
-    <!-- CS Select -->
-    <script src="js/classie.js"></script>
-    <script src="js/selectFx.js"></script>
+        <!-- Stellar -->
+        <script src="js/jquery.stellar.min.js"></script>
+        <!-- Superfish -->
+        <script src="js/hoverIntent.js"></script>
+        <script src="js/superfish.js"></script>
+        <!-- Magnific Popup -->
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/magnific-popup-options.js"></script>
+        <!-- Date Picker -->
+        <script src="js/bootstrap-datepicker.min.js"></script>
+        <!-- CS Select -->
+        <script src="js/classie.js"></script>
+        <script src="js/selectFx.js"></script>
 
-    <!-- Main JS -->
-    <script src="js/main.js"></script>
+        <!-- Main JS -->
+        <script src="js/main.js"></script>
 
 </body>
 
